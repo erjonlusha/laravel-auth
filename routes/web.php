@@ -13,14 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'PageController@index')->name('home');
+Route::get('about', 'PageController@about')->name('about');
+Route::get('contacts', 'PageController@contacts')->name('contacts');
+
+Route::get('blog', 'PostController@index')->name('blog');
+Route::get('blog/{post}','PostController@show');
+
+Auth::routes(['register' => false]);
+
+//Admin
+
+Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
+
+    Route::get('/', 'HomeController@index')->name('index');
+    Route::resource('posts', 'PostController');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
