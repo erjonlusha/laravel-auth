@@ -14,14 +14,10 @@
             {{ __('You are logged in!') }}
         </div>
     </div>
+    <a href="{{ route('admin.posts.create')}}" class="btn">Create new post</a>
 @endsection
 
 
 {{-- Istruzioni:
-Separate le routes pubbliche da quelle dell'admin, 
-        creando anche controllers separati per l'amministratrore.
-
 Implementate il crud posts completo (solo per l'utente autenticato), 
-        creando quindi modello, controller, migrazione e seeder.
-        
-Create anche una pagina blog dove l'utente non registrato puó vedere gli articoli del blog. --}}
+        creando quindi modello, controller, migrazione e seeder.--}}
