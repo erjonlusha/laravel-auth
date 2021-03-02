@@ -16,8 +16,3 @@
     </div>
     <a href="{{ route('admin.posts.create')}}" class="btn">Create new post</a>
 @endsection
-
-
-{{-- Istruzioni:
-Implementate il crud posts completo (solo per l'utente autenticato), 
-        creando quindi modello, controller, migrazione e seeder.--}}
